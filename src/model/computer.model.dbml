@@ -1,0 +1,127 @@
+Table Computer {
+  id int [pk]
+  sku varchar [default: '-']
+  name varchar [default: '-']
+  type varchar [default: '-', note: 'Laptop | Desktop | Notebook']
+  brand varchar [default: '-']
+  model varchar [default: '-']
+  os varchar [default: '-']
+  warranty boolean [default: false]
+  warrantyTime varchar [default: '-']
+  likes varchar [default: 0]
+  url varchar [default: '-']
+  madeIn varchar [default: '-']
+  company varchar [default: '-']
+}
+
+Table Input {
+  id int [pk]
+  wifi boolean [default: false]
+  hdmi boolean [default: false]
+  hdmiCount varchar [default: '-']
+  usb2 boolean [default: false]
+  usb3 boolean [default: false]
+  usbC boolean [default: false]
+  usbcount varchar [default: '-']
+  cd boolean [default: false]
+  blueray boolean [default: false]
+  tv boolean [default: false]
+  headphone boolean [default: false]
+  microphone boolean [default: false]
+  ethernet boolean [default: false]
+  network boolean [default: false]
+  vga boolean [default: false]
+  bluetooth boolean [default: false]
+  computerId int [ref: > Computer.id]
+}
+
+Table Webcam {
+  id int [pk]
+  enable boolean [default: false]
+  computerId int [ref: > Computer.id]
+}
+
+Table Speaker {
+  id int [pk]
+  included boolean [default: false]
+  computerId int [ref: > Computer.id]
+}
+
+Table Keyboard {
+  id int [pk]
+  illuminated boolean [default: false]
+  isNumeric boolean [default: false]
+  computerId int [ref: > Computer.id]
+}
+
+Table Graphic {
+  id int [pk]
+  name varchar [default: '-']
+  type varchar [default: '-', note: 'Dedicado']
+  brand varchar [default: '-']
+  computerId int [ref: > Computer.id]
+}
+
+Table Disk {
+  id int [pk]
+  hdd boolean [default: false]
+  ssd boolean [default: false]
+  ssdReader boolean [default: false]
+  opticalUnit boolean [default: false]
+  allowSecondUnit boolean [default: false]
+  allowReplace boolean [default: false]
+  computerId int [ref: > Computer.id]
+}
+
+Table Memory {
+  id int [pk]
+  type varchar [default: 'Disk | Graphic | Ram DDR4']
+  capacityGB varchar [default: '-']
+  optane boolean [default: false]
+  expandable boolean [default: false]
+  computerId int [ref: > Computer.id]
+  diskId int [ref: > Disk.id]
+  graphicId int [ref: > Graphic.id]
+}
+
+Table Processor {
+  id int [pk]
+  name varchar [default: '-']
+  brand varchar [default: '-']
+  generation varchar [default: '-']
+  velocityGHz varchar [default: '-']
+  maxVelocityGHz varchar [default: '-']
+  coreCount varchar [default: '-']
+  computerId int [ref: > Computer.id]
+}
+
+Table Screen {
+  id int [pk]
+  type varchar [default: '-', note: 'IPS']
+  definition varchar [default: '-']
+  touch boolean [default: false]
+  computerId int [ref: > Computer.id]
+}
+
+Table Dimension {
+  id int [pk]
+  widthCm varchar [default: '-']
+  heightCm varchar [default: '-']
+  widthPx varchar [default: '-']
+  heightPx varchar [default: '-']
+  thickCm varchar [default: '-']
+  weightKg varchar [default: '-']
+  sizeInch varchar [default: '-']
+  computerId int [ref: > Computer.id]
+  screenId int [ref: > Screen.id]
+}
+
+Table Price {
+  id int [pk]
+  realValue varchar [default: '-']
+  reducedValue varchar [default: '-']
+  discountValue varchar [default: '-']
+  currency varchar [default: 'S/']
+  consulted date [default: `now()`]
+  computerId int [ref: > Computer.id]
+}
