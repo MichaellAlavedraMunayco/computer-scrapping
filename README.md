@@ -29,7 +29,7 @@ Tool that extracts data from the pages of companies that sell computers in the c
 
 ![datamodel](https://raw.githubusercontent.com/MichaellAlavedraMunayco/computer-scrapping/main/.github/images/computers.database.png)
 
-Show in PDF hormat [here](https://raw.githubusercontent.com/MichaellAlavedraMunayco/computer-scrapping/main/.github/docs/computers.database.pdf)
+Download Data Model PDF File [here](https://raw.githubusercontent.com/MichaellAlavedraMunayco/computer-scrapping/main/.github/docs/computers.database.pdf)
 
 ### 3. Search for tools for data extraction
 
