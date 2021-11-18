@@ -16,12 +16,12 @@ Tool that extracts data from the pages of companies that sell computers in the c
 
 ### 1. Search for companies that sell computers in Trujillo
 
-* <a href="https://www.falabella.com.pe/" target="_blank">Falabella</a>
-* <a href="https://www.lacuracao.pe/" target="_blank">La Curacao</a>
-* <a href="https://www.oechsle.pe/" target="_blank">Oechsle</a>
-* <a href="https://www.efe.com.pe/" target="_blank">Efe</a>
-* <a href="https://hiraoka.com.pe" target="_blank">Hiraoka</a>
-* <a href="https://www.coolbox.pe/" target="_blank">Coolbox</a>
+* [Falabella](https://www.falabella.com.pe/)
+* [La Curacao](https://www.lacuracao.pe/)
+* [Oechsle](https://www.oechsle.pe/)
+* [Efe](https://www.efe.com.pe/)
+* [Hiraoka](https://hiraoka.com.pe/)
+* [Coolbox](https://www.coolbox.pe/)
 
 ### 2. Design of the data model
 
