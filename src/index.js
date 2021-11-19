@@ -4,7 +4,7 @@ async function main() {
 
   const falabellaResult = await new FalabellaScraper().scrap();
 
-  console.log(falabellaResult);
+  console.log(falabellaResult.priceList);
 
 }
 

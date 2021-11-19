@@ -33,7 +33,10 @@
   "homepage": "https://github.com/MichaellAlavedraMunayco/computer-scrapping#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.10",
+    "cloudflare-bypasser": "0.0.3",
+    "cloudscraper": "^4.6.0",
     "request": "^2.88.2",
-    "request-promise": "^4.2.6"
+    "request-promise": "^4.2.6",
+    "uuid": "^8.3.2"
   }
 }
