@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "commonjs",
+    "target": "es2018",
+    "module": "CommonJS",
     "lib": [
       "esnext",
       "dom"
@@ -13,11 +13,9 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
     "baseUrl": ".",
-    "paths": {
-      "src": [
-        "src"
-      ]
-    }
   }
 }

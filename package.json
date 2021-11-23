@@ -2,12 +2,12 @@
   "name": "computer-scrapping",
   "version": "1.0.0",
   "description": "Tool that extracts data from the pages of companies that sell computers in the city of Trujillo - Peru, exports them in an XLSX file according to a relational data model, and displays them on a Power BI dashboard.",
-  "main": "src/index.js",
+  "main": "build/index.js",
   "directories": {
     "doc": "doc"
   },
   "scripts": {
-    "start": "tsc && node build/src/index.js"
+    "start": "cls && tsc && node build/src/index.js"
   },
   "repository": {
     "type": "git",
@@ -32,15 +32,16 @@
   },
   "homepage": "https://github.com/MichaellAlavedraMunayco/computer-scrapping#readme",
   "dependencies": {
-    "@types/cheerio": "^0.22.30",
+    "chalk": "^4.1.2",
     "cheerio": "^1.0.0-rc.10",
+    "exceljs": "^4.3.0",
     "puppeteer": "^11.0.0",
-    "uuid": "^8.3.2"
+    "ts-prime": "^1.0.0"
   },
   "devDependencies": {
+    "@types/cheerio": "^0.22.30",
     "@types/node": "^16.11.9",
     "@types/puppeteer": "^5.4.4",
-    "@types/uuid": "^8.3.3",
     "tslint": "^5.20.1",
     "typescript": "^4.4.3"
   }

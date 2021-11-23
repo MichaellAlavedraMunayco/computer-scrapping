@@ -10,7 +10,7 @@ Table Computer {
   warrantyTime varchar [default: '-']
   likes varchar [default: 0]
   url varchar [default: '-']
-  madeIn varchar [default: '-']
+  country varchar [default: '-']
   company varchar [default: '-']
 }
 

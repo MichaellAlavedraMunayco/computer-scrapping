@@ -1,4 +1,23 @@
-export class FalabellaScraper {
+// Model
+import { Company } from 'src/enum/company.enum';
+// Interface
+import { ScraperInterface } from '../interface/scraper.interface';
+import { DatasetInterface } from 'src/interface/dataset.interface';
+// Service
+import { LoggerService } from './logger.service';
+
+
+export class FalabellaScraperService implements ScraperInterface {
+
+
+  logger: LoggerService;
+  company: Company;
+  dataset: DatasetInterface;
+
+  link: { [name: string]: string } = {
+    LaptopCatalog: 'https://www.falabella.com.pe/falabella-pe/category/cat40712/Laptops',
+    LaptopProduct: 'https://www.falabella.com.pe/falabella-pe/product/{sku}/{name}'
+  }
 
 
   constructor() {
@@ -7,7 +26,7 @@ export class FalabellaScraper {
 
   }
 
-  async scrap() {
+  async scrap(): Promise<DatasetInterface> {
 
     try {
 
@@ -30,7 +49,7 @@ export class FalabellaScraper {
       //   computerList.push(computer);
 
       //   const modifiedLink = FalabellaLinks.LaptopProduct
-      //     .replace('{sku}', computer.sku).replace('{name}', computer.name.replace(/\s+/g, '-').replace(/\"+/g, '-'));
+      //     .replace('{sku}', computer.sku).replace('{name}', computer.name.replace(/\s+/g, '-').replace(/\'+/g, '-'));
 
       //   console.log(modifiedLink);
 
@@ -50,22 +69,18 @@ export class FalabellaScraper {
       // this.computerList = computerList;
       // this.priceList = priceList;
 
-      // return {
-      //   computerList: this.computerList,
-      //   priceList: this.priceList,
-      // };
+      return {
+        computerList: [],
+        priceList: [],
+      };
 
     } catch (error) {
 
       console.error(error);
 
+      return null;
     }
 
   }
 
 }
-
-// const FalabellaLinks = {
-//   LaptopCatalog: 'https://www.falabella.com.pe/falabella-pe/category/cat40712/Laptops',
-//   LaptopProduct: 'https://www.falabella.com.pe/falabella-pe/product/{sku}/{name}'
-// }

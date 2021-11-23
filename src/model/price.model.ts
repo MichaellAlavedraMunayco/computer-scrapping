@@ -1,5 +1,5 @@
 // Tool
-import { v4 as uuidv4 } from 'uuid';
+import * as P from "ts-prime";
 // Enum
 import { Currency } from 'src/enum/currency.enum';
 
@@ -19,7 +19,7 @@ export class Price {
 
   constructor(realValue: string, reducedValue: string, discountValue: string, computerId: string) {
 
-    this.id = uuidv4();
+    this.id = P.uuidv4();
 
     this.realValue = realValue;
     this.reducedValue = reducedValue;
