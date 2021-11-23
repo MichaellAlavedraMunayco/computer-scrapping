@@ -34,5 +34,6 @@ Download Data Model PDF File [here](https://raw.githubusercontent.com/MichaellAl
 ### 3. Search for tools for data extraction
 
 * Node JS - Javascript Engine
-* [Cheerio JS](https://www.npmjs.com/package/cheerio) - Web page manipulation tool
+* [Puppeteer](https://www.npmjs.com/package/puppeteer) - Web page manipulation tool
+* [Cheerio JS](https://www.npmjs.com/package/cheerio) - Web page querier tool like JQuery
 * [Excel JS](https://www.npmjs.com/package/exceljs) - Tool for exporting extracted data to XLSX file
