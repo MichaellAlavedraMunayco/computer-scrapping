@@ -35,4 +35,4 @@ Download Data Model PDF File [here](https://raw.githubusercontent.com/MichaellAl
 
 * Node JS - Javascript Engine
 * [Cheerio JS](https://www.npmjs.com/package/cheerio) - Web page manipulation tool
-* [Export XLSX](https://www.npmjs.com/package/export-xlsx) - Tool for exporting extracted data to XLSX file
+* [Excel JS](https://www.npmjs.com/package/exceljs) - Tool for exporting extracted data to XLSX file
