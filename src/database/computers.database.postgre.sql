@@ -10,7 +10,7 @@ CREATE TABLE "Computer" (
   "warrantyTime" varchar DEFAULT '-',
   "likes" varchar DEFAULT 0,
   "url" varchar DEFAULT '-',
-  "madeIn" varchar DEFAULT '-',
+  "country" varchar DEFAULT '-',
   "company" varchar DEFAULT '-'
 );
 
@@ -37,7 +37,7 @@ CREATE TABLE "Input" (
 
 CREATE TABLE "Webcam" (
   "id" int PRIMARY KEY,
-  "enable" boolean DEFAULT false,
+  "included" boolean DEFAULT false,
   "computerId" int
 );
 

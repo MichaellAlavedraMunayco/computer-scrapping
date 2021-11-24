@@ -1,11 +1,13 @@
+// Util
+// import { Puppeteer, Cheerio, P } from '../util/util';
 // Model
-import { Company } from 'src/enum/company.enum';
+// import { Computer, Price } from '../model/model';
 // Interface
-import { ScraperInterface } from '../interface/scraper.interface';
-import { DatasetInterface } from 'src/interface/dataset.interface';
+import { DatasetInterface, ScraperInterface } from '../interface/interface';
+// Enum
+import { Company } from '../enum/enum';
 // Service
-import { LoggerService } from './logger.service';
-
+import { LoggerService } from './service';
 
 export class FalabellaScraperService implements ScraperInterface {
 

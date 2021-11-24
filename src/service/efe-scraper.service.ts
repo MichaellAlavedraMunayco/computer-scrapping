@@ -1,31 +1,21 @@
-// Tool
-import * as puppeteer from 'puppeteer';
-import * as cheerio from 'cheerio';
-import * as P from "ts-prime";
+// Util
+import { Puppeteer, Cheerio, P, S } from '../util/util';
 // Model
-import { Computer } from '../model/computer.model';
-// import { Price } from '../model/price.model';
-import { DatasetInterface } from 'src/interface/dataset.interface';
+import { Computer, Price } from '../model/model';
 // Interface
-import { ScraperInterface } from '../interface/scraper.interface';
+import { DatasetInterface, ScraperInterface } from '../interface/interface';
 // Enum
-import { LoggerType } from '../enum/logger.type.enum';
-import { ComputerType } from '../enum/computer.type.enum';
-import { Brand } from '../enum/brand.enum';
-import { Company } from '../enum/company.enum';
+import { Company, LoggerType, ComputerType, Brand } from '../enum/enum';
 // Service
-import { LoggerService } from './logger.service';
+import { LoggerService } from './service';
 
 
 export class EfeScraperService implements ScraperInterface {
 
 
   logger: LoggerService;
-
   company: Company;
-
   dataset: DatasetInterface;
-
   link: { [name: string]: string } = {
     ComputerCatalog: 'https://www.efe.com.pe/efe/computo',
   };
@@ -44,7 +34,7 @@ export class EfeScraperService implements ScraperInterface {
     try {
 
       this.logger.report('Inicializando el navegador');
-      const browser = await puppeteer.launch({ headless: false });
+      const browser = await Puppeteer.launch({ headless: false });
       const [catalogPage] = await browser.pages();
 
       this.logger.report('Ingresando al catalogo de productos');
@@ -64,9 +54,10 @@ export class EfeScraperService implements ScraperInterface {
 
       this.logger.report('Empezando la extraccion de datos...');
       const computerList: Computer[] = [];
+      const priceList: Price[] = [];
 
       const html2 = await productPage.content();
-      const $$ = cheerio.load(html2);
+      const $$ = Cheerio.load(html2);
 
       const detailList = $$('div.product_page_content div.tab div.content ul').children();
 
@@ -84,11 +75,12 @@ export class EfeScraperService implements ScraperInterface {
       computer.country = undefined;
       computer.company = this.company;
 
-      if (P.isDefined(computer.name)) {
-        this.logger.report('Agregando computadora: ' + computer.name);
-        computerList.push(computer);
-      }
+      const price = new Price();
 
+      price.realValue = S.extractNumbers($$('span.old_price').text().trim().split('.')[0]);
+      price.reducedValue = S.extractNumbers($$('span#offerPriceValue').text().trim().split('.')[0]);
+      price.discountValue = S.extractNumbers($$('div.dscto-prod-NE').text().trim());
+      price.computerId = computer.id;
 
       // this.logger.report('Recorriendo lista de computadoras');
       // for (const computerHTML of computerListHTML) {
@@ -105,10 +97,13 @@ export class EfeScraperService implements ScraperInterface {
 
       // }
 
+      computerList.push(computer);
+      priceList.push(price);
+
       this.logger.report('Cerrando el navegador');
       await browser.close();
 
-      return { computerList, priceList: [] } as DatasetInterface;
+      return { computerList, priceList } as DatasetInterface;
 
     } catch (error) {
 
@@ -119,7 +114,7 @@ export class EfeScraperService implements ScraperInterface {
 
   }
 
-  async scrollToBottom(page: puppeteer.Page) {
+  async scrollToBottom(page: Puppeteer.Page) {
 
     const distance = 100, delay = 100;
 

@@ -1,8 +1,7 @@
-// Tool
-import * as P from "ts-prime";
+// Util
+import { P } from '../util/util';
 // Enum
-import { ComputerType } from 'src/enum/computer.type.enum';
-import { Country } from "src/enum/country.enum";
+import { ComputerType, Country } from '../enum/enum';
 
 export class Computer {
 

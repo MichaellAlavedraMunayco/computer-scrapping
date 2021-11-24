@@ -1,20 +1,17 @@
 // Enum
-import { Company } from '../enum/company.enum';
+import { Company } from '../enum/enum';
 // Interface
-import { DatasetInterface } from '../interface/dataset.interface';
+import { DatasetInterface } from '../interface/interface';
 // Service
-import { LoggerService } from 'src/service/logger.service';
+import { LoggerService } from '../service/service';
 
 
 export interface ScraperInterface {
 
 
   logger: LoggerService;
-
   company: Company;
-
   dataset: DatasetInterface;
-
   link: { [name: string]: string };
 
 

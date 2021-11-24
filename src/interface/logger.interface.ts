@@ -1,5 +1,5 @@
 // Enum
-import { LoggerType } from '../enum/logger.type.enum';
+import { LoggerType } from '../enum/enum';
 
 
 export interface LoggerInterface {

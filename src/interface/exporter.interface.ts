@@ -1,14 +1,13 @@
 // Interface
 import { DatasetInterface } from './dataset.interface';
 // Service
-import { LoggerService } from 'src/service/logger.service';
+import { LoggerService } from '../service/service';
 
 
 export interface ExporterInterface {
 
 
   logger: LoggerService;
-
   dataset: DatasetInterface;
 
 

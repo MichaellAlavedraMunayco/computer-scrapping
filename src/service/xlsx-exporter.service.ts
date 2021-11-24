@@ -1,21 +1,46 @@
-// Tool
-import * as P from 'ts-prime';
-import { Workbook } from 'exceljs';
+// Util
+import { XLSX, P } from '../util/util';
 // Enum
-import { LoggerType } from '../enum/logger.type.enum';
+import { LoggerType } from '../enum/enum';
 // Interface
-import { DatasetInterface } from '../interface/dataset.interface';
-import { ExporterInterface } from '../interface/exporter.interface';
+import { DatasetInterface, ExporterInterface } from '../interface/interface';
 // Service
-import { LoggerService } from './logger.service';
+import { LoggerService } from './service';
 
 
 export class XLSXExporterService implements ExporterInterface {
 
 
   logger: LoggerService;
-
   dataset: DatasetInterface;
+
+  column: { [model: string]: Array<Partial<XLSX.Column>> } = {
+    computer: [
+      { header: 'id', key: 'id' },
+      { header: 'sku', key: 'sku' },
+      { header: 'type', key: 'type' },
+      { header: 'brand', key: 'brand' },
+      { header: 'model', key: 'model' },
+      { header: 'os', key: 'os' },
+      { header: 'warranty', key: 'warranty' },
+      { header: 'warrantyTime', key: 'warrantyTime' },
+      { header: 'likes', key: 'likes' },
+      { header: 'url', key: 'url' },
+      { header: 'country', key: 'country' },
+      { header: 'company', key: 'company' },
+    ],
+    price: [
+      { header: 'id', key: 'id' },
+      { header: 'realValue', key: 'realValue' },
+      { header: 'reducedValue', key: 'reducedValue' },
+      { header: 'discountValue', key: 'discountValue' },
+      { header: 'currency', key: 'currency' },
+      { header: 'consulted', key: 'consulted' },
+      { header: 'computerId', key: 'computerId' },
+    ],
+  };
+
+  view: Array<Partial<XLSX.WorksheetView>> = [{ state: 'frozen', xSplit: 0, ySplit: 1, activeCell: 'A1' }];
 
 
   constructor() {
@@ -38,28 +63,26 @@ export class XLSXExporterService implements ExporterInterface {
   public export(): void {
 
     this.logger.report('Contruyendo archivo XLSX');
-    let workbook = new Workbook();
+    const workbook = new XLSX.Workbook();
 
-    let worksheet = workbook.addWorksheet('Computer');
 
-    worksheet.columns = [
-      { header: 'id', key: 'id' },
-      { header: 'sku', key: 'sku' },
-      { header: 'type', key: 'type' },
-      { header: 'brand', key: 'brand' },
-      { header: 'model', key: 'model' },
-      { header: 'os', key: 'os' },
-      { header: 'warranty', key: 'warranty' },
-      { header: 'warrantyTime', key: 'warrantyTime' },
-      { header: 'likes', key: 'likes' },
-      { header: 'url', key: 'url' },
-      { header: 'country', key: 'country' },
-      { header: 'company', key: 'company' },
-    ];
+    this.logger.report('Agregando computer worksheet ...');
+    const computerWorksheet = workbook.addWorksheet('Computer');
 
-    this.dataset.computerList.forEach((computer, _i) => { worksheet.addRow(computer); });
+    computerWorksheet.columns = this.column.computer;
+    computerWorksheet.views = this.view;
 
-    worksheet.views = [{ state: 'frozen', xSplit: 0, ySplit: 1, activeCell: 'A1' }];
+    this.dataset.computerList.forEach(computer => { computerWorksheet.addRow(computer); });
+
+
+    this.logger.report('Agregando price worksheet ...');
+    const priceWorksheet = workbook.addWorksheet('Price');
+
+    priceWorksheet.columns = this.column.price;
+    priceWorksheet.views = this.view;
+
+    this.dataset.priceList.forEach(price => { priceWorksheet.addRow(price); });
+
 
     const filename = `dataset-${P.first(P.uuidv4().split('-'))}.xlsx`;
 

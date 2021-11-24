@@ -10,7 +10,7 @@ CREATE TABLE [Computer] (
   [warrantyTime] nvarchar(255) DEFAULT '-',
   [likes] nvarchar(255) DEFAULT (0),
   [url] nvarchar(255) DEFAULT '-',
-  [madeIn] nvarchar(255) DEFAULT '-',
+  [country] nvarchar(255) DEFAULT '-',
   [company] nvarchar(255) DEFAULT '-'
 )
 GO
@@ -39,7 +39,7 @@ GO
 
 CREATE TABLE [Webcam] (
   [id] int PRIMARY KEY,
-  [enable] boolean DEFAULT (false),
+  [included] boolean DEFAULT (false),
   [computerId] int
 )
 GO

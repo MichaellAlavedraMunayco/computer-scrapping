@@ -37,7 +37,7 @@ Table Input {
 
 Table Webcam {
   id int [pk]
-  enable boolean [default: false]
+  included boolean [default: false]
   computerId int [ref: > Computer.id]
 }
 

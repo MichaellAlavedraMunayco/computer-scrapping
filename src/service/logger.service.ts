@@ -1,9 +1,9 @@
-// Tool
-import * as chalk from 'chalk';
+// Util
+import { Chalk } from '../util/util';
 // Enum
-import { LoggerType } from "src/enum/logger.type.enum";
+import { LoggerType } from '../enum/enum';
 // Interface
-import { LoggerInterface } from 'src/interface/logger.interface';
+import { LoggerInterface } from '../interface/interface';
 
 
 export class LoggerService implements LoggerInterface {
@@ -19,7 +19,9 @@ export class LoggerService implements LoggerInterface {
   }
 
   public report(message: string) {
-    console.log(`${chalk.yellow(this.type)} ${chalk.blue(new Date().toLocaleString())} \t ${chalk.white(message)}`);
+    console.log(
+      `${Chalk.yellow(this.type)} ${Chalk.blue(new Date().toLocaleString())} \t ${Chalk.white(message)}`
+    );
   }
 
 

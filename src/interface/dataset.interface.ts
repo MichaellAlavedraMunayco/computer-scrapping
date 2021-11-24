@@ -1,5 +1,5 @@
-import { Computer } from '../model/computer.model';
-import { Price } from '../model/price.model';
+// Model
+import { Computer, Price } from '../model/model';
 
 export interface DatasetInterface {
 

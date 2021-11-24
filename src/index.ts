@@ -1,9 +1,11 @@
 // Service
-import { EfeScraperService } from "./service/efe-scraper.service";
-import { FalabellaScraperService } from "./service/falabella-scraper.service";
-import { XLSXExporterService } from "./service/xlsx-exporter.service";
+import {
+  EfeScraperService,
+  FalabellaScraperService,
+  XLSXExporterService
+} from './service/service';
 // Interface
-import { DatasetInterface } from "./interface/dataset.interface";
+import { DatasetInterface } from './interface/interface';
 
 
 async function main() {
