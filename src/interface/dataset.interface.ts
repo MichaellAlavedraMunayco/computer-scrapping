@@ -2,14 +2,14 @@
 import {
   Computer,
   ComputerDimension,
-  ScreenDimension,
   ComputerMemory,
+  Screen,
+  ScreenDimension,
+  Graphic,
   GraphicMemory,
+  Disk,
   DiskMemory,
   Processor,
-  Screen,
-  Disk,
-  Graphic,
   Input,
   Keyboard,
   WebCam,
@@ -20,14 +20,14 @@ export interface DatasetInterface {
 
   computerList: Computer[];
   computerDimensionList: ComputerDimension[];
-  screenDimensionList: ScreenDimension[],
   computerMemoryList: ComputerMemory[],
+  screenList: Screen[];
+  screenDimensionList: ScreenDimension[],
+  graphicList: Graphic[];
   graphicMemoryList: GraphicMemory[],
+  diskList: Disk[];
   diskMemoryList: DiskMemory[],
   processorList: Processor[];
-  screenList: Screen[];
-  diskList: Disk[];
-  graphicList: Graphic[];
   inputList: Input[];
   keyboardList: Keyboard[];
   webcamList: WebCam[];

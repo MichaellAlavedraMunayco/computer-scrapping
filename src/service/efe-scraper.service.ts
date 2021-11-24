@@ -216,14 +216,14 @@ export class EfeScraperService implements ScraperInterface {
 
       computerList.push(computer);
       computerDimensionList.push(computerDimension)
-      screenDimensionList.push(screenDimension);
       computerMemoryList.push(computerMemory);
+      screenList.push(screen);
+      screenDimensionList.push(screenDimension);
+      diskList.push(disk);
       diskMemoryList.push(diskMemory);
+      graphicList.push(graphic);
       graphicMemoryList.push(graphicMemory);
       processorList.push(processor);
-      screenList.push(screen);
-      diskList.push(disk);
-      graphicList.push(graphic);
       inputList.push(input);
       keyboardList.push(keyboard);
       webcamList.push(webcam);
@@ -235,14 +235,14 @@ export class EfeScraperService implements ScraperInterface {
       return {
         computerList,
         computerDimensionList,
-        screenDimensionList,
         computerMemoryList,
+        screenList,
+        screenDimensionList,
+        graphicList,
         graphicMemoryList,
+        diskList,
         diskMemoryList,
         processorList,
-        screenList,
-        diskList,
-        graphicList,
         inputList,
         keyboardList,
         webcamList,
