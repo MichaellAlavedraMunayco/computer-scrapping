@@ -5,7 +5,6 @@ import { Country } from './country.enum';
 import { Currency } from './currency.enum';
 import { GraphicType } from './graphic.type.enum';
 import { LoggerType } from './logger.type.enum';
-import { MemoryType } from './memory.type.enum';
 import { ScreenType } from './screen.type.enum';
 
 export {
@@ -16,6 +15,5 @@ export {
   Currency,
   GraphicType,
   LoggerType,
-  MemoryType,
   ScreenType,
 };

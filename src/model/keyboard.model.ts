@@ -1,7 +1,3 @@
-// Util
-import { P } from '../util/util';
-
-
 export class Keyboard {
 
   id: string;
@@ -12,11 +8,7 @@ export class Keyboard {
   computerId?: string;
 
 
-  constructor() {
-
-    this.id = P.uuidv4();
-
-  }
+  constructor() { }
 
 
 }

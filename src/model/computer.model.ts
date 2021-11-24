@@ -1,5 +1,3 @@
-// Util
-import { P } from '../util/util';
 // Enum
 import { ComputerType, Country } from '../enum/enum';
 
@@ -21,11 +19,7 @@ export class Computer {
   company?: string;
 
 
-  constructor() {
-
-    this.id = P.uuidv4();
-
-  }
+  constructor() { }
 
 
 

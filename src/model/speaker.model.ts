@@ -1,7 +1,3 @@
-// Util
-import { P } from '../util/util';
-
-
 export class Speaker {
 
   id: string;
@@ -11,11 +7,7 @@ export class Speaker {
   computerId?: string;
 
 
-  constructor() {
-
-    this.id = P.uuidv4();
-
-  }
+  constructor() { }
 
 
 }

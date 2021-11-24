@@ -5,9 +5,13 @@ import * as Chalk from 'chalk';
 import * as P from 'ts-prime';
 
 import { extractNumbers } from './extract-numbers.util';
+import { decodeUTF8 } from './decode-utf8';
+import { generateId } from './generate-id';
 
 const S = {
   extractNumbers,
+  decodeUTF8,
+  generateId,
 };
 
 export {

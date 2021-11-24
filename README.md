@@ -1,6 +1,6 @@
 <!--
 Created: Thu Nov 18 2021 12:56:11 GMT-0400 (hora de Bolivia)
-Modified: Thu Nov 18 2021 16:20:36 GMT-0400 (hora de Bolivia)
+Modified: Wed Nov 24 2021 14:48:59 GMT-0400 (hora de Bolivia)
 -->
 
 # Computer Scrapping
@@ -37,3 +37,9 @@ Download Data Model PDF File [here](https://raw.githubusercontent.com/MichaellAl
 * [Puppeteer](https://www.npmjs.com/package/puppeteer) - Web page manipulation tool
 * [Cheerio JS](https://www.npmjs.com/package/cheerio) - Web page querier tool like JQuery
 * [Excel JS](https://www.npmjs.com/package/exceljs) - Tool for exporting extracted data to XLSX file
+
+### 4. Charts
+
+* What brand of computer is more and less expensive?
+* Which computer has more and less processing capacity?
+* Which computer has more and less storage capacity?

@@ -1,5 +1,3 @@
-// Util
-import { P } from '../util/util';
 // Enum
 import { ScreenType } from '../enum/enum';
 
@@ -15,11 +13,7 @@ export class Screen {
   computerId?: string;
 
 
-  constructor() {
-
-    this.id = P.uuidv4();
-
-  }
+  constructor() { }
 
 
 }

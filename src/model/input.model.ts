@@ -1,7 +1,3 @@
-// Util
-import { P } from '../util/util';
-
-
 export class Input {
 
   id: string;
@@ -10,9 +6,12 @@ export class Input {
   hdmi?: boolean;
   hdmiCount?: string;
   usb2?: boolean;
+  usb2Count?: string;
   usb3?: boolean;
+  usb3Count?: string;
   usbC?: boolean;
-  usbcount?: string;
+  usbCCount?: string;
+  usbCount?: string;
   cd?: boolean;
   blueray?: boolean;
   tv?: boolean;
@@ -26,11 +25,7 @@ export class Input {
   computerId?: string;
 
 
-  constructor() {
-
-    this.id = P.uuidv4();
-
-  }
+  constructor() { }
 
 
 }

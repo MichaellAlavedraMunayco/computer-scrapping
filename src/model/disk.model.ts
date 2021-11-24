@@ -1,7 +1,3 @@
-// Util
-import { P } from '../util/util';
-
-
 export class Disk {
 
   id: string;
@@ -16,11 +12,7 @@ export class Disk {
   computerId?: string;
 
 
-  constructor() {
-
-    this.id = P.uuidv4();
-
-  }
+  constructor() { }
 
 
 }

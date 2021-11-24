@@ -1,7 +1,3 @@
-// Util
-import { P } from '../util/util';
-
-
 export class WebCam {
 
   id: string;
@@ -11,11 +7,7 @@ export class WebCam {
   computerId?: string;
 
 
-  constructor() {
-
-    this.id = P.uuidv4();
-
-  }
+  constructor() { }
 
 
 }

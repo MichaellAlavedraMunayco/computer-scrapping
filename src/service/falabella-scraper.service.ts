@@ -73,6 +73,18 @@ export class FalabellaScraperService implements ScraperInterface {
 
       return {
         computerList: [],
+        computerDimensionList: [],
+        screenDimensionList: [],
+        diskList: [],
+        graphicList: [],
+        inputList: [],
+        keyboardList: [],
+        computerMemoryList: [],
+        graphicMemoryList: [],
+        diskMemoryList: [],
+        processorList: [],
+        screenList: [],
+        webcamList: [],
         priceList: [],
       };
 

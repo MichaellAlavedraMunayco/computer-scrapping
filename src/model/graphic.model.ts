@@ -1,5 +1,3 @@
-// Util
-import { P } from '../util/util';
 // Enum
 import { GraphicType } from '../enum/enum';
 
@@ -14,11 +12,7 @@ export class Graphic {
   computerId?: string;
 
 
-  constructor() {
-
-    this.id = P.uuidv4();
-
-  }
+  constructor() { }
 
 
 }
