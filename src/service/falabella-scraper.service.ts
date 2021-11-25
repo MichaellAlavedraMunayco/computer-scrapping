@@ -16,10 +16,7 @@ export class FalabellaScraperService implements ScraperInterface {
   company: Company;
   dataset: DatasetInterface;
 
-  link: { [name: string]: string } = {
-    LaptopCatalog: 'https://www.falabella.com.pe/falabella-pe/category/cat40712/Laptops',
-    LaptopProduct: 'https://www.falabella.com.pe/falabella-pe/product/{sku}/{name}'
-  }
+  link: string = 'https://www.falabella.com.pe/falabella-pe/category/cat40712/Laptops';
 
 
   constructor() {

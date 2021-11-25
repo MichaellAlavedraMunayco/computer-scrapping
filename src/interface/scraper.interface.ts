@@ -12,7 +12,7 @@ export interface ScraperInterface {
   logger: LoggerService;
   company: Company;
   dataset: DatasetInterface;
-  link: { [name: string]: string };
+  link: string;
 
 
   scrap(): Promise<DatasetInterface>;

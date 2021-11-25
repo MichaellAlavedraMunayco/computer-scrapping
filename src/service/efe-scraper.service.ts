@@ -22,9 +22,7 @@ export class EfeScraperService implements ScraperInterface {
   logger: LoggerService;
   company: Company;
   dataset: DatasetInterface;
-  link: { [name: string]: string } = {
-    ComputerCatalog: 'https://www.efe.com.pe/efe/computo',
-  };
+  link: string = 'https://www.efe.com.pe/efe/computo';
 
 
   constructor() {
@@ -61,7 +59,7 @@ export class EfeScraperService implements ScraperInterface {
       const [catalogPage] = await browser.pages();
 
       this.logger.report('Ingresando al catalogo de productos');
-      await catalogPage.goto(this.link.ComputerCatalog, { waitUntil: 'networkidle2', timeout: 0 });
+      await catalogPage.goto(this.link, { waitUntil: 'networkidle2', timeout: 0 });
       await catalogPage.waitForTimeout(2000);
 
       // this.logger.report('Cargando todos los productos...');
@@ -81,7 +79,7 @@ export class EfeScraperService implements ScraperInterface {
 
         const productPage = P.last(await browser.pages());
         await productPage.bringToFront();
-        await productPage.waitForTimeout(10000);
+        await productPage.waitForTimeout(20000);
 
         this.logger.report('Empezando la extraccion de datos...');
         const productHTML = await productPage.content();
