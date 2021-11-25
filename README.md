@@ -40,6 +40,7 @@ Download Data Model PDF File [here](https://raw.githubusercontent.com/MichaellAl
 
 ### 4. Charts
 
-* What brand of computer is more and less expensive?
+* Which computer store has the most and least expensive?
+* Which brand of computer is more and less expensive?
 * Which computer has more and less processing capacity?
 * Which computer has more and less storage capacity?

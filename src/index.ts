@@ -22,20 +22,62 @@ async function main() {
 
   // Join datasets
   const dataset: DatasetInterface = {
-    computerList: [...efeDataset.computerList, ...falabellaDataset.computerList],
-    computerDimensionList: [...efeDataset.computerDimensionList, ...falabellaDataset.computerDimensionList],
-    computerMemoryList: [...efeDataset.computerMemoryList, ...falabellaDataset.computerMemoryList],
-    screenList: [...efeDataset.screenList, ...falabellaDataset.screenList],
-    screenDimensionList: [...efeDataset.screenDimensionList, ...falabellaDataset.screenDimensionList],
-    graphicList: [...efeDataset.graphicList, ...falabellaDataset.graphicList],
-    graphicMemoryList: [...efeDataset.graphicMemoryList, ...falabellaDataset.graphicMemoryList],
-    diskList: [...efeDataset.diskList, ...falabellaDataset.diskList],
-    diskMemoryList: [...efeDataset.diskMemoryList, ...falabellaDataset.diskMemoryList],
-    processorList: [...efeDataset.processorList, ...falabellaDataset.processorList],
-    inputList: [...efeDataset.inputList, ...falabellaDataset.inputList],
-    keyboardList: [...efeDataset.keyboardList, ...falabellaDataset.keyboardList],
-    webcamList: [...efeDataset.webcamList, ...falabellaDataset.webcamList],
-    priceList: [...efeDataset.priceList, ...falabellaDataset.priceList],
+    computerList: [
+      ...efeDataset.computerList,
+      ...falabellaDataset.computerList
+    ],
+    computerDimensionList: [
+      ...efeDataset.computerDimensionList,
+      ...falabellaDataset.computerDimensionList
+    ],
+    computerMemoryList: [
+      ...efeDataset.computerMemoryList,
+      ...falabellaDataset.computerMemoryList
+    ],
+    screenList: [
+      ...efeDataset.screenList,
+      ...falabellaDataset.screenList
+    ],
+    screenDimensionList: [
+      ...efeDataset.screenDimensionList,
+      ...falabellaDataset.screenDimensionList
+    ],
+    graphicList: [
+      ...efeDataset.graphicList,
+      ...falabellaDataset.graphicList
+    ],
+    graphicMemoryList: [
+      ...efeDataset.graphicMemoryList,
+      ...falabellaDataset.graphicMemoryList
+    ],
+    diskList: [
+      ...efeDataset.diskList,
+      ...falabellaDataset.diskList
+    ],
+    diskMemoryList: [
+      ...efeDataset.diskMemoryList,
+      ...falabellaDataset.diskMemoryList
+    ],
+    processorList: [
+      ...efeDataset.processorList,
+      ...falabellaDataset.processorList
+    ],
+    inputList: [
+      ...efeDataset.inputList,
+      ...falabellaDataset.inputList
+    ],
+    keyboardList: [
+      ...efeDataset.keyboardList,
+      ...falabellaDataset.keyboardList
+    ],
+    webcamList: [
+      ...efeDataset.webcamList,
+      ...falabellaDataset.webcamList
+    ],
+    priceList: [
+      ...efeDataset.priceList,
+      ...falabellaDataset.priceList
+    ],
   };
 
 
