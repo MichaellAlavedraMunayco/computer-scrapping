@@ -1,6 +1,8 @@
 export enum LoggerType {
 
-  EfeScraperLogger = 'Efe Scraper Logger',
-  XLXSExporterLogger = 'XLXS Exporter Logger',
+  EfeScraperLogger = 'Efe Scraper',
+  OechsleScraperLogger = 'Oechsle Scraper',
+  CoolboxScraperLogger = 'Coolbox Scraper',
+  XLXSExporterLogger = 'XLXS Exporter',
 
 }

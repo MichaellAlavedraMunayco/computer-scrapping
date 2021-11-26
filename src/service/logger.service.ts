@@ -20,7 +20,7 @@ export class LoggerService implements LoggerInterface {
 
   public report(message: string) {
     console.log(
-      `${Chalk.yellow(this.type)} ${Chalk.blue(new Date().toLocaleString())} \t ${Chalk.white(message)}`
+      `${Chalk.yellow(this.type)} ${Chalk.blue(new Date().toTimeString().split(' ')[0])} ${Chalk.white(message)}`
     );
   }
 

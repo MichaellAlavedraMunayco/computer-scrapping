@@ -37,10 +37,3 @@ Download Data Model PDF File [here](https://raw.githubusercontent.com/MichaellAl
 * [Puppeteer](https://www.npmjs.com/package/puppeteer) - Web page manipulation tool
 * [Cheerio JS](https://www.npmjs.com/package/cheerio) - Web page querier tool like JQuery
 * [Excel JS](https://www.npmjs.com/package/exceljs) - Tool for exporting extracted data to XLSX file
-
-### 4. Charts
-
-* Which computer store has the most and least expensive?
-* Which brand of computer is more and less expensive?
-* Which computer has more and less processing capacity?
-* Which computer has more and less storage capacity?

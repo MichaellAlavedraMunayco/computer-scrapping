@@ -4,5 +4,8 @@ export enum Brand {
   Lenovo = 'Lenovo',
   Hp = 'Hp',
   Asus = 'Asus',
+  Msi = 'Msi',
+  Apple = 'Apple',
+  Huawei = 'Huawei',
 
 }

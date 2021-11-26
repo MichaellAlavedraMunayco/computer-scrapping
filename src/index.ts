@@ -1,89 +1,52 @@
 // Service
 import {
+  CoolboxScraperService,
   EfeScraperService,
-  FalabellaScraperService,
+  OechsleScraperService,
   XLSXExporterService
 } from './service/service';
-// Interface
-import { DatasetInterface } from './interface/interface';
 
 
 async function main() {
 
-  // Get dataser from Efe Store
-  const efeScraper = new EfeScraperService()
-  const efeDataset = await efeScraper.scrap();
-
-
-  // Get dataser from Falabella
-  const falabellaScraper = new FalabellaScraperService()
-  const falabellaDataset = await falabellaScraper.scrap();
-
-
-  // Join datasets
-  const dataset: DatasetInterface = {
-    computerList: [
-      ...efeDataset.computerList,
-      ...falabellaDataset.computerList
-    ],
-    computerDimensionList: [
-      ...efeDataset.computerDimensionList,
-      ...falabellaDataset.computerDimensionList
-    ],
-    computerMemoryList: [
-      ...efeDataset.computerMemoryList,
-      ...falabellaDataset.computerMemoryList
-    ],
-    screenList: [
-      ...efeDataset.screenList,
-      ...falabellaDataset.screenList
-    ],
-    screenDimensionList: [
-      ...efeDataset.screenDimensionList,
-      ...falabellaDataset.screenDimensionList
-    ],
-    graphicList: [
-      ...efeDataset.graphicList,
-      ...falabellaDataset.graphicList
-    ],
-    graphicMemoryList: [
-      ...efeDataset.graphicMemoryList,
-      ...falabellaDataset.graphicMemoryList
-    ],
-    diskList: [
-      ...efeDataset.diskList,
-      ...falabellaDataset.diskList
-    ],
-    diskMemoryList: [
-      ...efeDataset.diskMemoryList,
-      ...falabellaDataset.diskMemoryList
-    ],
-    processorList: [
-      ...efeDataset.processorList,
-      ...falabellaDataset.processorList
-    ],
-    inputList: [
-      ...efeDataset.inputList,
-      ...falabellaDataset.inputList
-    ],
-    keyboardList: [
-      ...efeDataset.keyboardList,
-      ...falabellaDataset.keyboardList
-    ],
-    webcamList: [
-      ...efeDataset.webcamList,
-      ...falabellaDataset.webcamList
-    ],
-    priceList: [
-      ...efeDataset.priceList,
-      ...falabellaDataset.priceList
-    ],
-  };
-
-
-  // Export dataset into XLSX File
-  new XLSXExporterService().add(dataset).export();
+  await coolboxScrap(false);
+  await oechsleScrap(false);
+  await efeScrap(true);
 
 }
+
+
+async function coolboxScrap(enable: boolean): Promise<void> {
+
+  if (!enable) return;
+
+  const coolboxScraper = new CoolboxScraperService()
+  const coolboxDataset = await coolboxScraper.scrap();
+  new XLSXExporterService().add(coolboxDataset).export();
+
+}
+
+
+async function oechsleScrap(enable: boolean): Promise<void> {
+
+  if (!enable) return;
+
+  const oechsleScraper = new OechsleScraperService()
+  const oechsleDataset = await oechsleScraper.scrap();
+  new XLSXExporterService().add(oechsleDataset).export();
+
+}
+
+
+async function efeScrap(enable: boolean): Promise<void> {
+
+  if (!enable) return;
+
+  const efeScraper = new EfeScraperService()
+  const efeDataset = await efeScraper.scrap();
+  new XLSXExporterService().add(efeDataset).export();
+
+}
+
 
 main();

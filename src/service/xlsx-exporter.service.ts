@@ -83,7 +83,7 @@ export class XLSXExporterService implements ExporterInterface {
     ],
     disk: [
       { header: 'id', key: 'id' },
-      { header: 'hhd', key: 'hhd' },
+      { header: 'hdd', key: 'hdd' },
       { header: 'ssd', key: 'ssd' },
       { header: 'ssdReader', key: 'ssdReader' },
       { header: 'opticalUnit', key: 'opticalUnit' },
@@ -164,6 +164,12 @@ export class XLSXExporterService implements ExporterInterface {
 
 
   public export(): void {
+
+    if (!this.dataset?.computerList?.length) {
+
+      this.logger.report('Exportacion omitida por falta de datos');
+      return;
+    }
 
     this.logger.report('Contruyendo archivo XLSX');
     const workbook = new XLSX.Workbook();

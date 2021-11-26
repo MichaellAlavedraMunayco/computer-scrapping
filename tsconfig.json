@@ -9,13 +9,14 @@
     "outDir": "build",
     "rootDir": "./",
     "strict": true,
-    "noUnusedLocals": true,
+    "noUnusedLocals": false,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "strictNullChecks": false,
     "noImplicitAny": false,
     "skipLibCheck": true,
+    "allowUnusedLabels": true,
     "baseUrl": ".",
   }
 }
